@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SearchPageContent from '../searchPage/SearchPageContent';
 import UploadPage from '../uploadPage/UploadPageContent';
 import LoginPage from '../loginPage/LoginPageContent';
+import watchVideoPageContent from '../watchVideoPage/WatchVideoPageContent';
 
 export default function SearchPage() {
 	return (
@@ -17,6 +18,7 @@ export default function SearchPage() {
 					<Route path='/' exact component={SearchPageContent} />
 					<Route path='/upload' exact component={UploadPage} />
 					<Route path='/login' exact component={LoginPage} />
+					<Route path='/watch' exact component={watchVideoPageContent} />
 				</Switch>
 			</div>
 		</Router>
