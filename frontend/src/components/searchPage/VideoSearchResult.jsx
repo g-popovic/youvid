@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 export default function VideoSearchResult(props) {
 	return (
-		<div class='card mb-3'>
+		<div className='card mb-3'>
 			<Link to='/watch?id=ass' className='video-link-container'>
-				<div class='row g-0'>
-					<div class='col-sm-4 video-thumbnail-container'>
+				<div className='row g-0'>
+					<div className='col-sm-4 video-thumbnail-container'>
 						<img
 							className='video-thumbnail'
 							src={
@@ -18,13 +18,13 @@ export default function VideoSearchResult(props) {
 						/>
 						<p className='video-length'>23:20</p>
 					</div>
-					<div class='col-sm-8'>
-						<div class='card-body'>
-							<h5 class='card-title mb-2'>
+					<div className='col-sm-8'>
+						<div className='card-body'>
+							<h5 className='card-title mb-2'>
 								Card title and it should be longer
 							</h5>
-							<p class='card-text mb-2'>Username403 </p>
-							<p class='card-text text-muted'>
+							<p className='card-text mb-2'>Username403 </p>
+							<p className='card-text text-muted'>
 								104 Views - 3 Years Ago
 							</p>
 						</div>

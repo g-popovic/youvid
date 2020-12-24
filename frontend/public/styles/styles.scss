@@ -134,3 +134,32 @@ ul {
 		margin-right: 1rem;
 	}
 }
+
+.publish-btn {
+	margin: 2rem auto 0;
+	display: block;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+.login-form {
+	max-width: 20rem;
+	margin: 0 auto;
+}
+
+.login-buttons-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+
+	button {
+		flex: 1;
+
+		&:first-child {
+			margin-right: 1rem;
+		}
+	}
+}
+
+.form-text {
+	// display: none;
+}

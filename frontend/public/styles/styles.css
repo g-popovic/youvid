@@ -144,3 +144,35 @@ ul {
   display: inline;
   margin-right: 1rem;
 }
+
+.publish-btn {
+  margin: 2rem auto 0;
+  display: block;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.login-form {
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+.login-buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+}
+
+.login-buttons-container button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.login-buttons-container button:first-child {
+  margin-right: 1rem;
+}
