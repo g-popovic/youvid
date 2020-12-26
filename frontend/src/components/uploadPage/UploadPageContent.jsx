@@ -13,13 +13,13 @@ export default function UploadPage() {
 					aria-describedby='basic-addon1'
 				/>
 			</div>
-			<div className='card text-center pb-5 pt-5'>
+			<div className='card text-center pb-5 pt-5 upload-file-container'>
 				<div className='card-body'>
 					<h5 className='card-text mb-3' style={{ fontWeight: 400 }}>
-						Select a file to upload
+						Select a video file
 					</h5>
 					<label className='btn btn-dark' for='fileSelect'>
-						Browse Files
+						Choose File
 					</label>
 					<input
 						type='file'

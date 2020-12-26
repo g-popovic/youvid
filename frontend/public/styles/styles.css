@@ -175,3 +175,7 @@ ul {
 .login-buttons-container button:first-child {
   margin-right: 1rem;
 }
+
+.upload-file-container {
+  border: 2px dashed #888;
+}
