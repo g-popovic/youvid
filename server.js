@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const session = require('express-session');
 const authRoutes = require('./routes/authentication');
+const videoRoutes = require('./routes/video');
 const app = express();
 
 const isProduction = process.env.NODE_ENV !== 'production';
@@ -23,6 +24,7 @@ if (isProduction) app.use(cors());
 
 // Connect server to routes
 app.use('/auth', authRoutes);
+app.use('/video', videoRoutes);
 
 // Listen for requests
 const PORT = process.env.PORT || 5000;

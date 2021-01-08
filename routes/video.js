@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { authUser } = require('../middleware/auth');
+const db = require('../db/index');
 const AWS = require('aws-sdk');
 const multer = require('multer');
+const { v4: uuid } = require('uuid');
 
 /*----------------------SETUP----------------------*/
 
@@ -18,17 +20,20 @@ const storage = multer.memoryStorage({
 	}
 });
 
-const upload = multer({ storage }).single('image');
+const upload = multer({ storage }).single('video');
 
 /*----------------------ROUTES----------------------*/
 
 // Uploads an image file to AWS S3, sets the users profilePicture to the URL of the image
 // Returns a link to the newly uploaded image
-router.post('/upload-video', authUser, upload, (req, res) => {
+router.post('/upload-video', upload, (req, res) => {
+	if (!req.file) return res.status(400).send('File not found');
+
 	const originalName = req.file.originalname.split('.');
 	const fileType = originalName[originalName.length - 1];
 
-	if (fileType !== 'mp4' && fileType !== 'mov') return res.sendStatus(400);
+	if (fileType !== 'mp4' && fileType !== 'mov')
+		return res.status(400).send('Invalid file type');
 
 	const params = {
 		Bucket: process.env.BUCKET_NAME,
@@ -38,7 +43,9 @@ router.post('/upload-video', authUser, upload, (req, res) => {
 
 	s3.upload(params, async (err, data) => {
 		if (err) return res.status(500).send(err);
-		await User.updateOne(req.userId, { profilePicture: data.key });
+		// db.query('INSERT INTO VIDEO ...')
 		res.send(data);
 	});
 });
+
+module.exports = router;
